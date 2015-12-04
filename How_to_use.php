@@ -2,6 +2,7 @@
 
     include_once 'secken.class.php';
 
+    // login YangCong Developer Center, A new sdk application can be created in secken Dashboard, you can get appid、 appkey
     $app_id     = 'app_id';
     $app_key    = 'app_key';
 
@@ -17,10 +18,15 @@
 
     # Step 2 - Check the returned result
     if ( $secken_api->getCode() != 200 ){
-        var_dump($secken_api->getCode(), $secken_api->getMessage());
-
+		$arr = array(
+			'status'=> $secken_api->getCode(),
+			'description' => $secken_api->getMessage(),
+			);
+		$json = json_encode($arr);
+		echo $json;
     } else {
-        var_dump($ret);
+		$json = json_encode($ret);
+		echo $json;
     }
 
 ?>

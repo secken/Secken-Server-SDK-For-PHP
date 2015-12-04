@@ -7,7 +7,7 @@ A php library for using the Secken API.
  * PHP 5.3 or above
  * Secken Account and An application
 
- Download [here](https://www.yangcong.com/download) secken client, create account, and log in secken Dashboard.
+ Download [here](https://www.yangcong.com/download#/sdk) secken client demo, create account, and log in secken Dashboard.
  A new sdk application can be created in secken Dashboard, you can get appid、 appkey
 
 ## Overview
