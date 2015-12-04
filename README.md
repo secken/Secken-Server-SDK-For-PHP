@@ -39,10 +39,15 @@ and a single event_id correspond to the qrcode,the event_id will use in the getR
     $ret  = $secken_api->getQrCode();
 
     if ( $secken_api->getCode() != 200 ){
-        var_dump($secken_api->getCode(), $secken_api->getMessage());
-
+		$arr = array(
+			'status'=> $secken_api->getCode(),
+			'description' => $secken_api->getMessage(),
+			);
+		$json = json_encode($arr);
+		echo $json;
     } else {
-        var_dump($ret);
+		$json = json_encode($ret);
+		echo $json;
     }
 
 ### Request a user Push Authentication
@@ -52,10 +57,15 @@ When calling this method, the server will push a verifying request to client’s
     $ret  = $secken_api->askPushAuth($uid);
 
     if ( $secken_api->getCode() != 200 ){
-        var_dump($secken_api->getCode(), $secken_api->getMessage());
-
+		$arr = array(
+			'status'=> $secken_api->getCode(),
+			'description' => $secken_api->getMessage(),
+			);
+		$json = json_encode($arr);
+		echo $json;
     } else {
-        var_dump($ret);
+		$json = json_encode($ret);
+		echo $json;
     }
 
 
@@ -66,10 +76,15 @@ Once the methods like getQrCode() and askPushAuth() are called successfully, it 
     $ret  = $secken_api->getResult($event_id);
 
     if ( $secken_api->getCode() != 200 ){
-        var_dump($secken_api->getCode(), $secken_api->getMessage());
-
+		$arr = array(
+			'status'=> $secken_api->getCode(),
+			'description' => $secken_api->getMessage(),
+			);
+		$json = json_encode($arr);
+		echo $json;
     } else {
-        var_dump($ret);
+		$json = json_encode($ret);
+		echo $json;
     }
 
 Regarding the event_id, this method returns a status code and informs those methods which value should be returned. A list of status code is described below:
@@ -90,10 +105,15 @@ Once the sdk client methods like authFace() are called successfully, it triggers
     $ret  = $secken_api->checkAuthToken($auth_token);
 
     if ( $secken_api->getCode() != 200 ){
-        var_dump($secken_api->getCode(), $secken_api->getMessage());
-
+		$arr = array(
+			'status'=> $secken_api->getCode(),
+			'description' => $secken_api->getMessage(),
+			);
+		$json = json_encode($arr);
+		echo $json;
     } else {
-        var_dump($ret);
+		$json = json_encode($ret);
+		echo $json;
     }
 
 ##Status Code
